@@ -1,0 +1,10 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Programa de Registro de Estudiantes y Cursos
+${licensePrefix}
+${licensePrefix}Daniel Somarribas Quirós
+${licensePrefix}B57072
+<#if licenseLast??>
+${licenseLast}
+</#if>
