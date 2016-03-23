@@ -20,6 +20,11 @@ public class MetodosCursos
         arrayCursos = new ArrayList <Curso>();
     }
     
+    public ArrayList <Curso> getArrayCursos()
+    {
+        return arrayCursos;
+    }
+    
     public void agregarCurso(String informacion[])
     {
         Curso temporal = new Curso(informacion[0],informacion[1],Integer.parseInt(informacion[2]));

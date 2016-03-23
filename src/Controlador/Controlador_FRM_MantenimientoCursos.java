@@ -5,10 +5,12 @@
  */
 package Controlador;
 
+import Modelo.Curso;
 import Modelo.MetodosCursos;
 import Vista.FRM_MantenimientoCursos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,11 +21,24 @@ public class Controlador_FRM_MantenimientoCursos implements ActionListener
 {
     MetodosCursos metodos;
     FRM_MantenimientoCursos mantenimientoCursos;
-    
+    ArrayList <Curso> arrayCursos;
+
+   
     public Controlador_FRM_MantenimientoCursos(FRM_MantenimientoCursos mantenimientoCursos) 
     {
         this.mantenimientoCursos = mantenimientoCursos;
         metodos = new MetodosCursos();
+    }
+    
+    public void setArrayCursos()
+    {
+        arrayCursos = metodos.getArrayCursos();
+    }
+    
+    public ArrayList <Curso> getArrayCursos()
+    {
+        setArrayCursos();
+        return arrayCursos;
     }
 
     public void actionPerformed(ActionEvent e)

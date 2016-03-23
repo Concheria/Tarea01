@@ -31,6 +31,13 @@ public class Controlador_FRM_Matriculas implements ActionListener
         {
             System.out.println("Matricular");
         }
+        if(e.getActionCommand().equals("BuscarEstudiantes"))
+        {
+            System.out.println("Buscar Estudiantes");
+        }
+        if(e.getActionCommand().equals("BuscarCursos"))
+        {
+            System.out.println("Buscar Cursos");
+        }
     }
-    
 }

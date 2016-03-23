@@ -5,11 +5,21 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author daniel
  */
 public class MetodosMatriculas 
-{
+{   
+    ArrayList <Estudiante> arrayEstudiantes;
+    ArrayList <Curso> arrayCursos;
+    ArrayList <Matricula> arrayMatricula;
     
+    public void setArrays(ArrayList <Curso> arrayCursos, ArrayList <Estudiante> arrayEstudiantes)
+    {
+        this.arrayCursos = arrayCursos;
+        this.arrayEstudiantes = arrayEstudiantes;
+    }
 }

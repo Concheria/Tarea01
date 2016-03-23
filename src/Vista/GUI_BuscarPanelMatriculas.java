@@ -11,12 +11,12 @@ import Controlador.Controlador_FRM_Matriculas;
  *
  * @author daniel
  */
-public class BuscarPanel extends javax.swing.JPanel {
+public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
 
     /**
      * Creates new form EstudiantesMatriculaPanel
      */
-    public BuscarPanel() {
+    public GUI_BuscarPanelMatriculas() {
         initComponents();
     }
     
@@ -77,7 +77,14 @@ public class BuscarPanel extends javax.swing.JPanel {
 
         jLabel8.setText("Siglas");
 
+        jtf_NombreCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_NombreCursoActionPerformed(evt);
+            }
+        });
+
         jb_BuscarCursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
+        jb_BuscarCursos.setActionCommand("BuscarCursos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -101,30 +108,27 @@ public class BuscarPanel extends javax.swing.JPanel {
                             .addComponent(jtf_Nombre)
                             .addComponent(jtf_Direccion))))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel7)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_NombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtf_NombreCurso))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jtf_Siglas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jb_BuscarCursos)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jtf_Creditos))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jtf_Creditos))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,6 +175,10 @@ public class BuscarPanel extends javax.swing.JPanel {
     private void jtf_DireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_DireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_DireccionActionPerformed
+
+    private void jtf_NombreCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_NombreCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_NombreCursoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

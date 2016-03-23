@@ -20,6 +20,11 @@ public class MetodosEstudiantes
         arrayEstudiantes=new ArrayList <Estudiante>();
     }
     
+    public ArrayList <Estudiante> getArrayEstudiantes()
+    {
+        return arrayEstudiantes;
+    }
+    
     public void agregarEstudiante(String informacion[])
     {
         Estudiante temporal=new Estudiante(informacion[0], informacion[1], informacion[2]);

@@ -22,6 +22,7 @@ public class FRM_MantenimientoCursos extends javax.swing.JFrame
     {
         initComponents();
         setVisible(false);
+        setResizable(false);
         controladorCursos = new Controlador_FRM_MantenimientoCursos(this);
         GUI_BotonesCursos.agregarEventosGUI(controladorCursos);
         GUI_InformacionCursos.agregarEventosGUI(controladorCursos);

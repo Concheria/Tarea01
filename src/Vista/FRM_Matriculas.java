@@ -1,7 +1,5 @@
 package Vista;
 
-import Controlador.Controlador_FRM_MantenimientoCursos;
-import Controlador.Controlador_FRM_MantenimientoEstudiantes;
 import Controlador.Controlador_FRM_Matriculas;
 
 /**
@@ -10,19 +8,22 @@ import Controlador.Controlador_FRM_Matriculas;
  */
 
 
-public class FRM_Matriculas extends javax.swing.JFrame 
+public class FRM_Matriculas extends javax.swing.JFrame
 {
     Controlador_FRM_Matriculas controladorMatriculas;
     /**
      * Creates new form FRM_Matricula
      */
-    public FRM_Matriculas() {
+    public FRM_Matriculas()
+    {
         initComponents();
         setVisible(false);
+        setResizable(false);
         controladorMatriculas = new Controlador_FRM_Matriculas(this);
         jb_Matricular.addActionListener(controladorMatriculas);
+        buscarPanel.agregarEventosGUI(controladorMatriculas);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +40,7 @@ public class FRM_Matriculas extends javax.swing.JFrame
         jl_Instrucciones3 = new javax.swing.JLabel();
         jb_Matricular = new javax.swing.JButton();
         jl_Buscar1 = new javax.swing.JLabel();
-        buscarPanel1 = new Vista.BuscarPanel();
+        buscarPanel = new Vista.GUI_BuscarPanelMatriculas();
 
         setTitle("Matriculas");
 
@@ -71,30 +72,26 @@ public class FRM_Matriculas extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_Instrucciones3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jl_Instrucciones2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jl_Buscar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jl_Instrucciones1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jl_Buscar1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jl_InstruccionesTitle))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buscarPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_InstruccionesTitle)
+                    .addComponent(jl_Instrucciones3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jl_Instrucciones2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_Buscar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jl_Instrucciones1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_Buscar1)))
+                .addGap(69, 69, 69))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(buscarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +109,7 @@ public class FRM_Matriculas extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jl_Instrucciones3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buscarPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buscarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -120,13 +117,13 @@ public class FRM_Matriculas extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jb_MatricularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_MatricularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_MatricularActionPerformed
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Vista.BuscarPanel buscarPanel1;
+    private Vista.GUI_BuscarPanelMatriculas buscarPanel;
     private javax.swing.JButton jb_Matricular;
     private javax.swing.JLabel jl_Buscar;
     private javax.swing.JLabel jl_Buscar1;
