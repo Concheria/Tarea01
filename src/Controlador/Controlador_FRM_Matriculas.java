@@ -49,6 +49,7 @@ public class Controlador_FRM_Matriculas implements ActionListener
             if((metodos.getEstudianteGuardado() != null) && (metodos.getCursoGuardado() != null))
             {
                 metodos.matricularEstudiante(metodos.getEstudianteGuardado(), metodos.getCursoGuardado());
+                metodos.limpiarGuardados();
             }
             else
             {

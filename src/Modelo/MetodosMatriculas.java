@@ -68,6 +68,7 @@ public class MetodosMatriculas
         return cursoDesdeSiglas;
     }
     
+    //Añade el objeto Matricula al ArrayList de Matriculas
     public void matricularEstudiante(Estudiante estudiante, Curso curso)
     {
         Matricula temporal = new Matricula(estudiante, curso);
@@ -75,26 +76,31 @@ public class MetodosMatriculas
         arrayMatriculas.add(temporal);
     }
     
+    //Guarda el Estudiante buscado (Se envía el objeto desde el controlador)
     public void setEstudianteGuardado(Estudiante estudianteGuardado)
     {
         this.estudianteGuardado = estudianteGuardado;
     }
     
+    //Guarda el Curso buscado (Se envía el objeto desde el controlador)
     public void setCursoGuardado(Curso cursoGuardado)
     {       
         this.cursoGuardado = cursoGuardado;
     }
     
+    //Devuelve el Estudiante guardado
     public Estudiante getEstudianteGuardado()
     {
         return estudianteGuardado;
     }
     
+    //Devuelve el Curso guardado
     public Curso getCursoGuardado()
     {
         return cursoGuardado;
     }
     
+    //Limpia los objetos Estudiante y Curso guardados enviandoles un párametro Null
     public void limpiarGuardados()
     {
         setEstudianteGuardado(null);
