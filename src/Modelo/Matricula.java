@@ -1,22 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 import java.util.Date;
 
 /**
- *
+ * Objeto Matrícula
  * @author daniel
  */
 public class Matricula 
 {
+    //Define las variables
     private Estudiante estudiante;
     private Curso curso;
     private Date fecha;
 
+    //Método Constructor: Set a todas las Variables
+    public Matricula(Estudiante estudiante, Curso curso, Date fecha)
+    {
+        this.estudiante = estudiante;
+        this.curso = curso;
+        this.fecha = fecha;
+    }
+    
     /**
      * @return the estudiante
      */
@@ -59,6 +63,7 @@ public class Matricula
         this.fecha = fecha;
     }
     
+    //Devuelve un String con toda la información
     public void getInfo()
     {
         int dia = fecha.getDay();

@@ -1,22 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista;
 
 import Controlador.Controlador_FRM_MantenimientoEstudiantes;
+import Modelo.Estudiante;
+import java.util.ArrayList;
 
 /**
- *
- * @author estudiante
+ * Ventana de Mantenimiento de Estudiantes: Añade los estudiantes y los registra
+ * @author Daniel Somarribas - b57072
  */
 public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
 
+    //Define el controlador y el ArrayList del objeto Estudiante
     Controlador_FRM_MantenimientoEstudiantes controladorEstudiantes;
+    ArrayList <Estudiante> arrayEstudiantes;
+    
     /**
-     * Creates new form FRM_MantenimientoEstudiantes
+     * Crea el Frame FRM_MantenimientoEstudiantes
      */
+    
+    //Método Constructor: Define el Frame y su controlador
     public FRM_MantenimientoEstudiantes() 
     {
         initComponents();
@@ -28,21 +30,44 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
         this.jb_MostrarTodos.addActionListener(controladorEstudiantes);
     }
 
+    //Set del ArrayList de Estudiantes
+    public void setArrayEstudiantes()
+    {
+        arrayEstudiantes = controladorEstudiantes.getArrayEstudiantes();
+    }
+    
+    //Devuelve el ArrayList de Estudiantes
+    public ArrayList <Estudiante> getArrayEstudiantes()
+    {
+        setArrayEstudiantes();
+        return arrayEstudiantes;
+    }
+    
+    /**
+     * Métodos del Frame
+     * Estos métodos interactúan con lo que se muestra
+     * (ej: Llenar campos vacíos)
+     */
+    
+    //Devuelve el String escrito en todos los campos
     public String[] getInformacionEscrita()
     {
         return this.GUI_InformacionEstudiante.getInformacionEscrita();
     }
     
+    //Devuelve el String en el campo de Cédula
     public String getCedulaEscrita()
     {
         return this.GUI_InformacionEstudiante.getCedulaEscrita();
     }
     
+    //Pide al panel llenar los campos (con la información buscada)
     public void fillFields(String cedula, String nombre, String direccion)
     {
        GUI_InformacionEstudiante.fillFields(cedula, nombre, direccion);
     }
     
+    //Pide al panel limpiar todos los campos
     public void clearFields()
     {
        GUI_InformacionEstudiante.clearFields();

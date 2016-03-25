@@ -1,23 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista;
 
 import Controlador.Controlador_FRM_MantenimientoCursos;
+import Modelo.Curso;
+import java.util.ArrayList;
 
 /**
- *
+ * Ventana de Mantenimiento de Cursos: Añade los cursos y los registra
  * @author daniel
  */
 public class FRM_MantenimientoCursos extends javax.swing.JFrame 
 {
+    //Define el controlador y el ArrayList del objeto Curso
     Controlador_FRM_MantenimientoCursos controladorCursos;
-    
+    ArrayList <Curso> arrayCursos;
+        
     /**
-     * Creates new form FRM_MantenimientoCursos
+     * Crea el Frame FRM_MantenimientoCursos
      */
+    
+    //Método Constructor: Define el Frame y su controlador
     public FRM_MantenimientoCursos() 
     {
         initComponents();
@@ -28,23 +29,44 @@ public class FRM_MantenimientoCursos extends javax.swing.JFrame
         GUI_InformacionCursos.agregarEventosGUI(controladorCursos);
     }
     
+    //Set del ArrayList de Cursos
+    public void setArrayCursos()
+    {
+        arrayCursos = controladorCursos.getArrayCursos();
+    }
     
+    //Devuelve el ArrayList de Cursos
+    public ArrayList <Curso> getArrayCursos()
+    {
+        setArrayCursos();
+        return arrayCursos;
+    }
     
+    /**
+     * Métodos del Frame
+     * Estos métodos interactúan con lo que se muestra 
+     * (ej: Llenar campos vacíos)
+     */
+    
+    //Devuelve el String escrito en todos los campos
     public String[] getInformacionEscrita()
     {
         return this.GUI_InformacionCursos.getInformacionEscrita();
     }
     
+    //Devuelve el String en el campo de Siglas
     public String getSiglasEscritas()
     {
         return this.GUI_InformacionCursos.getSiglasEscritas();
     }
     
+    //Pide al panel llenar los campos (con la información buscada)
     public void fillFields(String siglas, String nombre, int creditos)
     {
         GUI_InformacionCursos.fillFields(siglas, nombre, creditos);
     }
     
+    //Pide al panel limpiar todos los campos
     public void clearFields()
     {
         GUI_InformacionCursos.clearFields();

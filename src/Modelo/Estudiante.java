@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 /**
- *
+ * Objeto Estudiante
  * @author estudiante
  */
 public class Estudiante 
 {
+    //Define las Variables:
     private String cedula;
     private String nombre;
     private String direccion;
 
+    //Método Constructor: Set a todas las Variables
     public Estudiante(String cedula, String nombre, String direccion)
     {
         this.cedula = cedula;
@@ -64,6 +61,7 @@ public class Estudiante
         this.direccion = direccion;
     }
     
+    //Devuelve un String con toda la información
     public String getInfo()
     {
         String info = "Cedula: "+getCedula()+" - Nombre: "+getNombre()+" - Dirección: "+getDireccion();

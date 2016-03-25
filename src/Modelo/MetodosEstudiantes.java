@@ -1,30 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 import java.util.ArrayList;
 
 /**
- *
- * @author estudiante
+ * Métodos del Frame de Estudiantes
+ * @author Daniel Somarribas - b57072
  */
 public class MetodosEstudiantes 
 {
+    //Define el ArrayList de Estudiantes
     ArrayList <Estudiante> arrayEstudiantes;
     
+    //Método Constructor: Crea el ArrayList de Estudiantes
     public MetodosEstudiantes()
     {
         arrayEstudiantes=new ArrayList <Estudiante>();
     }
     
+    //Devuelve el ArrayList de Estudiantes
     public ArrayList <Estudiante> getArrayEstudiantes()
     {
         return arrayEstudiantes;
     }
     
+    //Añade un nuevo Estudiante al ArrayList
     public void agregarEstudiante(String informacion[])
     {
         Estudiante temporal=new Estudiante(informacion[0], informacion[1], informacion[2]);
@@ -32,6 +31,8 @@ public class MetodosEstudiantes
         arrayEstudiantes.add(temporal);
     }
     
+    //Usa un Ciclo For para repasar el ArrayList de Estudiantes en busca de una Cédula
+    //Devuelve un objeto Estudiante
     public Estudiante buscarCedula(String cedula)
     {
         System.out.println("Buscando Cedula");
@@ -52,6 +53,7 @@ public class MetodosEstudiantes
         return estudianteDesdeCedula;
     }
     
+    //Devuelve la cédula del Estudiante buscado
     public String getCedulaBuscada(Estudiante eTemp)
     {
         String cedula = eTemp.getCedula();
@@ -59,6 +61,7 @@ public class MetodosEstudiantes
         return cedula;
     }
     
+    //Devuelve el nombre del Estudiante buscado
     public String getNombreBuscado(Estudiante eTemp)
     {
         String nombre = eTemp.getNombre();
@@ -66,6 +69,7 @@ public class MetodosEstudiantes
         return nombre;
     }
     
+    //Devuelve la dirección del Estudiante buscado
     public String getDireccionBuscada(Estudiante eTemp)
     {
         String direccion = eTemp.getDireccion();
@@ -73,6 +77,7 @@ public class MetodosEstudiantes
         return direccion;
     }
     
+    //Devuelve un String con todos los estudiantes registrados usando un Ciclo For
     public String getTodos()
     {
         String lista = "Estudiantes Registrados:\n\n";
@@ -88,6 +93,17 @@ public class MetodosEstudiantes
         return lista;
     }
     
+    /**
+     * Elimina al Estudiante
+     * @param cedula
+     * 
+     * Funcionamiento:
+     * 1. Recibe la cédula del estudiante
+     * 2. Usa un Ciclo For para recorrer el ArrayList de Estudiantes en busca de esa cédula
+     * 3. Elimina al Estudiante de la posición encontrada
+     * 
+     * Nota: (Se sabe que el Estudiante existe porque ya está confirmado desde el controlador)
+     */
     public void eliminarEstudiante(String cedula)
     {
         int posicion = 0;
@@ -110,12 +126,5 @@ public class MetodosEstudiantes
         System.out.println("Eliminado: "+temp.getInfo());
                 
         arrayEstudiantes.remove(posicion);
-    }
-    
-    public void mostrarInformacionEstudiantes()
-    {
-        Estudiante temporal;
-        temporal=arrayEstudiantes.get(0);
-        System.out.println(temporal.getInfo());
     }
 }

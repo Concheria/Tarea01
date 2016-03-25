@@ -23,11 +23,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-              <Component id="jb_Matricular" min="-2" pref="262" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -49,6 +44,13 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="buscarPanel" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <Component id="jb_Matricular" min="-2" pref="262" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jb_MostrarTodos" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,7 +74,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="buscarPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jb_Matricular" min="-2" pref="64" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jb_Matricular" min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="jb_MostrarTodos" min="-2" pref="42" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -126,6 +131,12 @@
       </Properties>
     </Component>
     <Component class="Vista.GUI_BuscarPanelMatriculas" name="buscarPanel">
+    </Component>
+    <Component class="javax.swing.JButton" name="jb_MostrarTodos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Todos"/>
+        <Property name="actionCommand" type="java.lang.String" value="Todos"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

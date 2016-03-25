@@ -1,30 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 import java.util.ArrayList;
 
 /**
- *
- * @author daniel
+ * Métodos del Frame de Cursos
+ * @author Daniel Somarribas - b57072
  */
 public class MetodosCursos 
 {
+    //Define el ArrayList de Cursos
     ArrayList <Curso> arrayCursos;
     
+    //Método Constructor: Crea el ArrayList de Cursos
     public MetodosCursos()
     {
         arrayCursos = new ArrayList <Curso>();
     }
     
+    //Devuelve el ArrayList de Cursos
     public ArrayList <Curso> getArrayCursos()
     {
         return arrayCursos;
     }
     
+    //Añade un nuevo Curso al ArrayList
     public void agregarCurso(String informacion[])
     {
         Curso temporal = new Curso(informacion[0],informacion[1],Integer.parseInt(informacion[2]));
@@ -32,6 +31,8 @@ public class MetodosCursos
         arrayCursos.add(temporal);
     }
     
+    //Usa un Ciclo For para repasar el ArrayList de Cursos en busca de unas Siglas
+    //Devuelve un objeto Curso
     public Curso buscarSiglas(String siglas)
     {
         System.out.println("Buscando Siglas");
@@ -52,6 +53,7 @@ public class MetodosCursos
         return cursoDesdeSiglas;
     }
     
+    //Devuelve las siglas del Curso buscado
     public String getSiglasBuscadas(Curso cTemp)
     {
         String siglas = cTemp.getSiglas();
@@ -59,6 +61,7 @@ public class MetodosCursos
         return siglas;
     }
     
+    //Devuelve el nombre del Curso buscado
     public String getNombreBuscado(Curso cTemp)
     {
         String nombre = cTemp.getNombre();
@@ -66,6 +69,7 @@ public class MetodosCursos
         return nombre;
     }
     
+    //Devuelve los créditos del Curso buscado
     public int getCreditosBuscados(Curso cTemp)
     {
         int creditos = cTemp.getCreditos();
@@ -73,6 +77,7 @@ public class MetodosCursos
         return creditos;
     }
     
+    //Devuelve un String con todos los cursos registrados usando un Ciclo For
     public String getTodos()
     {
         String lista = "Estudiantes Registrados:\n\n";
