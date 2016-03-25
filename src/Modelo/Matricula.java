@@ -84,14 +84,14 @@ public class Matricula
     }
 
     /**
-     * @param fecha the fecha to set
+     * Inicializa la fecha del sistema
      */
     public void setFecha() {
         fecha = new Date();
     }
         
     /**
-     * @param dia the dia to set
+     * Define el día con base a la fecha definida en setFecha()
      */
     public void setDia() {
         setFecha();
@@ -99,19 +99,19 @@ public class Matricula
     }
     
     /**
-     * @param mes the mes to set
+     * Define el mes con base a la fecha definida en setFecha()
      */
     public void setMes() {
-        fecha = new Date();
+        setFecha();
         this.mes = fecha.getMonth();
     }
     
     /**
-     * @param anio the anio to set
+     * Define el año con base a la fecha definida en setFecha()
      */
     public void setAnio()
     {
-        fecha = new Date();
+        setFecha();
         this.anio = fecha.getYear();
     }
     
