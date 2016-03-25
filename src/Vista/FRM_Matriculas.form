@@ -134,7 +134,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jb_MostrarTodos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mostrar Todos"/>
+        <Property name="text" type="java.lang.String" value="Mostrar Todas las Matr&#xed;culas"/>
         <Property name="actionCommand" type="java.lang.String" value="Todos"/>
       </Properties>
     </Component>

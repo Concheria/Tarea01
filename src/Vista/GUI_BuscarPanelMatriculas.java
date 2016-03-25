@@ -25,7 +25,53 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
         this.jb_BuscarEstudiantes.addActionListener(controlador);
         this.jb_BuscarCursos.addActionListener(controlador);
     }
+    
+    public String getCedulaEscrita()
+    {
+        String cedula = this.jtf_Cedula.getText();
+        
+        return cedula;
+    }
+    
+    public String getSiglasEscritas()
+    {
+        String siglas;
+        
+        siglas = jtf_Siglas.getText();
+        
+        return siglas;
+    }
+    
+    public void fillFieldsEstudiantes(String cedula, String nombre, String direccion)
+    {
+        this.jtf_Cedula.setText(cedula);
+        this.jtf_Nombre.setText(nombre);
+        this.jtf_Direccion.setText(direccion);
+    }
+    
+    public void fillFieldsCursos(String siglas, String nombre, int creditos)
+    {
+        String creditosStr = ""+creditos;
+        
+        this.jtf_Siglas.setText(siglas);
+        this.jtf_NombreCurso.setText(nombre);
+        this.jtf_Creditos.setText(creditosStr);
+    }
+    
+    public void clearFieldsEstudiantes()
+    {
+        this.jtf_Cedula.setText("");
+        this.jtf_Nombre.setText("");
+        this.jtf_Direccion.setText("");
+    }
 
+    public void clearFieldsCursos()
+    {
+        this.jtf_Siglas.setText("");
+        this.jtf_NombreCurso.setText("");
+        this.jtf_Creditos.setText("");    
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

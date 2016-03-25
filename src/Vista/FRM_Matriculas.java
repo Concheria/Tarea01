@@ -46,6 +46,40 @@ public class FRM_Matriculas extends javax.swing.JFrame
         controladorMatriculas.setArrays(arrayCursos, arrayEstudiantes);
     }
     
+    //Devuelve el String en el campo de Cédula
+    public String getCedulaEscrita()
+    {
+        return this.buscarPanel.getCedulaEscrita();
+    }
+    
+    //Devuelve el String en el campo de Siglas
+    public String getSiglasEscritas()
+    {
+        return this.buscarPanel.getSiglasEscritas();
+    }
+    
+    //Pide al panel llenar los campos (con la información buscada)
+    public void fillFieldsEstudiantes(String cedula, String nombre, String direccion)
+    {
+       buscarPanel.fillFieldsEstudiantes(cedula, nombre, direccion);
+    }
+    
+    public void fillFieldsCursos(String siglasEncontradas, String nombreEncontrado, int creditosEncontrados)
+    {
+        buscarPanel.fillFieldsCursos(siglasEncontradas, nombreEncontrado, creditosEncontrados);
+    }
+    
+    //Pide al panel limpiar todos los campos
+    public void clearFieldsEstudiantes()
+    {
+       buscarPanel.clearFieldsEstudiantes();
+    }
+    
+    public void clearFieldsCursos()
+    {
+        buscarPanel.clearFieldsCursos();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,7 +124,7 @@ public class FRM_Matriculas extends javax.swing.JFrame
         jl_Buscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         jl_Buscar1.setText("Buscar.");
 
-        jb_MostrarTodos.setText("Mostrar Todos");
+        jb_MostrarTodos.setText("Mostrar Todas las Matrículas");
         jb_MostrarTodos.setActionCommand("Todos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
