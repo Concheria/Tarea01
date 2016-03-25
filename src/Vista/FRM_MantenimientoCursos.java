@@ -48,13 +48,19 @@ public class FRM_MantenimientoCursos extends javax.swing.JFrame
      * (ej: Llenar campos vacíos)
      */
     
-    //Devuelve el String escrito en todos los campos
+    /**
+     * Devuelve el String escrito en todos los campos
+     * @return the Cursos information String
+     */
     public String[] getInformacionEscrita()
     {
         return this.GUI_InformacionCursos.getInformacionEscrita();
     }
     
-    //Devuelve el String en el campo de Siglas
+    /**
+     * Devuelve el String en el campo de Siglas
+     * @return the siglas
+     */
     public String getSiglasEscritas()
     {
         return this.GUI_InformacionCursos.getSiglasEscritas();

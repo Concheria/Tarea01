@@ -49,13 +49,19 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
      * (ej: Llenar campos vacíos)
      */
     
-    //Devuelve el String escrito en todos los campos
+    /**
+     * Devuelve el String escrito en todos los campos
+     * @return the Estudiantes information String
+     */
     public String[] getInformacionEscrita()
     {
         return this.GUI_InformacionEstudiante.getInformacionEscrita();
     }
     
-    //Devuelve el String en el campo de Cédula
+    /**
+     * Devuelve el String en el campo de Cédula
+     * @return the cedula
+     */
     public String getCedulaEscrita()
     {
         return this.GUI_InformacionEstudiante.getCedulaEscrita();
@@ -119,10 +125,6 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Vista.GUI_BotonesEstudiantes GUI_BotonesEstudiantes;
