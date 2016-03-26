@@ -69,14 +69,22 @@ public class FRM_Matriculas extends javax.swing.JFrame
         buscarPanel.fillFieldsCursos(siglasEncontradas, nombreEncontrado, creditosEncontrados);
     }
     
-    //Pide al panel limpiar todos los campos
+    //Pide al panel limpiar los campos de Estudiante
     public void clearFieldsEstudiantes()
     {
        buscarPanel.clearFieldsEstudiantes();
     }
     
+    //Pide al panel limpiar los campos de Curso
     public void clearFieldsCursos()
     {
+        buscarPanel.clearFieldsCursos();
+    }
+    
+    //Pide al panel limpiar todos los campos
+    public void clearFields()
+    {
+        buscarPanel.clearFieldsEstudiantes();
         buscarPanel.clearFieldsCursos();
     }
     
@@ -96,8 +104,8 @@ public class FRM_Matriculas extends javax.swing.JFrame
         jl_Instrucciones3 = new javax.swing.JLabel();
         jb_Matricular = new javax.swing.JButton();
         jl_Buscar1 = new javax.swing.JLabel();
-        buscarPanel = new Vista.GUI_BuscarPanelMatriculas();
         jb_MostrarTodos = new javax.swing.JButton();
+        buscarPanel = new Vista.GUI_BuscarPanelMatriculas();
 
         setTitle("Matriculas");
 
@@ -131,29 +139,31 @@ public class FRM_Matriculas extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_InstruccionesTitle)
-                    .addComponent(jl_Instrucciones3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jl_Instrucciones2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl_Buscar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jl_Instrucciones1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl_Buscar1)))
-                .addGap(69, 69, 69))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(buscarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_MostrarTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_InstruccionesTitle)
+                            .addComponent(jl_Instrucciones3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jl_Instrucciones2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jl_Buscar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jl_Instrucciones1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jl_Buscar1)))
+                        .addGap(69, 69, 69))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(buscarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

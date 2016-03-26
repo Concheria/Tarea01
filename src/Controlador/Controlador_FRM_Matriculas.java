@@ -50,6 +50,7 @@ public class Controlador_FRM_Matriculas implements ActionListener
             {
                 metodos.matricularEstudiante(metodos.getEstudianteGuardado(), metodos.getCursoGuardado());
                 metodos.limpiarGuardados();
+                matriculas.clearFields();
             }
             else
             {
@@ -130,6 +131,16 @@ public class Controlador_FRM_Matriculas implements ActionListener
                 JOptionPane.showMessageDialog(null, "No se ha encontrado ningún curso con las siglas");
             }
             System.out.println("Buscar Cursos");
+        }
+        if(e.getActionCommand().equals("LimpiarEstudiante"))
+        {
+            metodos.limpiarEstudiante();
+            matriculas.clearFieldsEstudiantes();
+        }
+        if(e.getActionCommand().equals("LimpiarCurso"))
+        {
+            metodos.limpiarCurso();
+            matriculas.clearFieldsCursos();
         }
         if(e.getActionCommand().equals("Todos"))
         {

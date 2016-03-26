@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 import Controlador.Controlador_FRM_Matriculas;
 
 /**
- *
- * @author daniel
+ * Panel de Búsqueda para Matrícula
+ * @author Daniel Somarribas - b57072
  */
 public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
 
@@ -24,6 +20,8 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
     {
         this.jb_BuscarEstudiantes.addActionListener(controlador);
         this.jb_BuscarCursos.addActionListener(controlador);
+        this.jb_LimpiarEstudiante.addActionListener(controlador);
+        this.jb_LimpiarCurso.addActionListener(controlador);
     }
     
     public String getCedulaEscrita()
@@ -45,7 +43,7 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
     public void fillFieldsEstudiantes(String cedula, String nombre, String direccion)
     {
         this.jtf_Cedula.setText(cedula);
-        this.jtf_Nombre.setText(nombre);
+        this.jtf_NombreEstudiante.setText(nombre);
         this.jtf_Direccion.setText(direccion);
     }
     
@@ -61,7 +59,7 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
     public void clearFieldsEstudiantes()
     {
         this.jtf_Cedula.setText("");
-        this.jtf_Nombre.setText("");
+        this.jtf_NombreEstudiante.setText("");
         this.jtf_Direccion.setText("");
     }
 
@@ -86,7 +84,7 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jtf_Direccion = new javax.swing.JTextField();
-        jtf_Nombre = new javax.swing.JTextField();
+        jtf_NombreEstudiante = new javax.swing.JTextField();
         jtf_Cedula = new javax.swing.JTextField();
         jb_BuscarEstudiantes = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -97,6 +95,8 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
         jtf_Siglas = new javax.swing.JTextField();
         jtf_NombreCurso = new javax.swing.JTextField();
         jb_BuscarCursos = new javax.swing.JButton();
+        jb_LimpiarEstudiante = new javax.swing.JButton();
+        jb_LimpiarCurso = new javax.swing.JButton();
 
         jLabel1.setText("Estudiantes");
 
@@ -132,6 +132,12 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
         jb_BuscarCursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         jb_BuscarCursos.setActionCommand("BuscarCursos");
 
+        jb_LimpiarEstudiante.setText("Limpiar");
+        jb_LimpiarEstudiante.setActionCommand("LimpiarEstudiante");
+
+        jb_LimpiarCurso.setText("Limpiar");
+        jb_LimpiarCurso.setActionCommand("LimpiarCurso");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,35 +152,41 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jtf_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jb_LimpiarEstudiante)
+                                    .addComponent(jtf_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jb_BuscarEstudiantes))
-                            .addComponent(jtf_Nombre)
-                            .addComponent(jtf_Direccion))))
+                            .addComponent(jtf_Direccion, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtf_NombreEstudiante, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_NombreCurso))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jtf_Siglas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64)
+                                .addComponent(jb_LimpiarCurso)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_BuscarCursos)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jtf_Creditos))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jb_BuscarCursos))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jtf_Siglas, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jtf_NombreCurso))))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,27 +194,34 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jtf_Siglas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52)
+                        .addComponent(jLabel8)
+                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jtf_Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_LimpiarEstudiante, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel5)
+                                .addComponent(jb_LimpiarCurso)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jtf_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jtf_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_Siglas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
-                                    .addComponent(jtf_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_NombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7)
                                     .addComponent(jtf_NombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
@@ -214,7 +233,7 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jtf_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -238,11 +257,13 @@ public class GUI_BuscarPanelMatriculas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JButton jb_BuscarCursos;
     private javax.swing.JButton jb_BuscarEstudiantes;
+    private javax.swing.JButton jb_LimpiarCurso;
+    private javax.swing.JButton jb_LimpiarEstudiante;
     private javax.swing.JTextField jtf_Cedula;
     private javax.swing.JTextField jtf_Creditos;
     private javax.swing.JTextField jtf_Direccion;
-    private javax.swing.JTextField jtf_Nombre;
     private javax.swing.JTextField jtf_NombreCurso;
+    private javax.swing.JTextField jtf_NombreEstudiante;
     private javax.swing.JTextField jtf_Siglas;
     // End of variables declaration//GEN-END:variables
 }

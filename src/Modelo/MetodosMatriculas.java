@@ -16,6 +16,12 @@ public class MetodosMatriculas
     Estudiante estudianteGuardado;
     Curso cursoGuardado;
     
+    //Método Constructor
+    public MetodosMatriculas()
+    {
+        arrayMatriculas = new ArrayList <Matricula>();
+    }
+    
     //Set de los tres Arrays
     public void setArrays(ArrayList <Curso> arrayCursos, ArrayList <Estudiante> arrayEstudiantes)
     {
@@ -98,6 +104,18 @@ public class MetodosMatriculas
     public Curso getCursoGuardado()
     {
         return cursoGuardado;
+    }
+    
+    //Limpia el objeto Estudiante guardado enviando un parámetro Null
+    public void limpiarEstudiante()
+    {
+        setEstudianteGuardado(null);
+    }
+    
+    //Limpia el objeto Curso guardado enviando un parámetro Null
+    public void limpiarCurso()
+    {
+        setCursoGuardado(null);
     }
     
     //Limpia los objetos Estudiante y Curso guardados enviandoles un párametro Null
