@@ -91,13 +91,16 @@ public class MetodosMatriculas
         Estudiante estudianteCiclo = estudianteGuardado;
         String info = "Estudiante:\n";
         info = ""+estudianteGuardado.getInfo()+"\n\nCursos:\n";
+        int numCurso = 1;
         for(int i=0; i<arrayMatriculas.size();i++)
         {
             if(arrayMatriculas.get(i).getEstudiante() == estudianteCiclo)
             {
-                info +=""+i+". "+arrayMatriculas.get(i).getCurso().getInfo()+"\n";
+                info +=""+numCurso+". "+arrayMatriculas.get(i).getCurso().getInfo()+"\n";
+                numCurso++;
             }
         }
+        numCurso = 1;
         estudianteCiclo = null;
         return info;
     }
