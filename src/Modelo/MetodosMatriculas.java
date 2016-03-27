@@ -82,6 +82,23 @@ public class MetodosMatriculas
         arrayMatriculas.add(temporal);
     }
     
+    //Muestra el Estudiante ingresado y sus cursos
+    public String mostrarCursEst()
+    {
+        Estudiante estudianteCiclo = estudianteGuardado;
+        String info = "Estudiante:\n";
+        info = ""+estudianteGuardado.getInfo()+"\n\nCursos:\n";
+        for(int i=0; i<arrayMatriculas.size();i++)
+        {
+            if(arrayMatriculas.get(i).getEstudiante() == estudianteCiclo)
+            {
+                info +=""+i+". "+arrayMatriculas.get(i).getCurso().getInfo()+"\n";
+            }
+        }
+        estudianteCiclo = null;
+        return info;
+    }
+    
     //Guarda el Estudiante buscado (Se envía el objeto desde el controlador)
     public void setEstudianteGuardado(Estudiante estudianteGuardado)
     {
@@ -172,5 +189,11 @@ public class MetodosMatriculas
         int creditos = cTemp.getCreditos();
         
         return creditos;
+    }
+    
+    //Devuelve el Array de Matriculas
+    public ArrayList <Matricula> getArrayMatriculas()
+    {
+        return arrayMatriculas;
     }
 }

@@ -142,8 +142,12 @@ public class Controlador_FRM_Matriculas implements ActionListener
             metodos.limpiarCurso();
             matriculas.clearFieldsCursos();
         }
-        if(e.getActionCommand().equals("Todos"))
+        if(e.getActionCommand().equals("MostrarCursEst"))
         {
+            if(metodos.getArrayMatriculas() != null)
+            {
+                JOptionPane.showMessageDialog(null,metodos.mostrarCursEst());
+            }
             System.out.println("Mostrar Todos");
         }
     }

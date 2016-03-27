@@ -23,13 +23,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-              <Component id="jb_Matricular" min="-2" pref="262" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jb_MostrarTodos" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -52,9 +45,14 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="buscarPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+              <Component id="jb_Matricular" min="-2" pref="262" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,10 +76,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="buscarPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jb_Matricular" min="-2" pref="64" max="-2" attributes="0"/>
-                  <Component id="jb_MostrarTodos" min="-2" pref="42" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jb_Matricular" min="-2" pref="64" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -90,7 +85,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jl_InstruccionesTitle">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Instrucciones"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;&lt;font size =+1&gt;Instrucciones&lt;/font&gt;&lt;/b&gt;&lt;/html&gt;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jl_Instrucciones1">
@@ -132,12 +127,6 @@
           <Image iconType="3" name="/img/buscar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Buscar."/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_MostrarTodos">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mostrar Todas las Matr&#xed;culas"/>
-        <Property name="actionCommand" type="java.lang.String" value="Todos"/>
       </Properties>
     </Component>
     <Component class="Vista.GUI_BuscarPanelMatriculas" name="buscarPanel">

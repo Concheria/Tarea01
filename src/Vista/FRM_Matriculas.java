@@ -28,7 +28,6 @@ public class FRM_Matriculas extends javax.swing.JFrame
         setResizable(false);
         controladorMatriculas = new Controlador_FRM_Matriculas(this);
         jb_Matricular.addActionListener(controladorMatriculas);
-        jb_MostrarTodos.addActionListener(controladorMatriculas);
         buscarPanel.agregarEventosGUI(controladorMatriculas);
     }
     
@@ -104,12 +103,11 @@ public class FRM_Matriculas extends javax.swing.JFrame
         jl_Instrucciones3 = new javax.swing.JLabel();
         jb_Matricular = new javax.swing.JButton();
         jl_Buscar1 = new javax.swing.JLabel();
-        jb_MostrarTodos = new javax.swing.JButton();
         buscarPanel = new Vista.GUI_BuscarPanelMatriculas();
 
         setTitle("Matriculas");
 
-        jl_InstruccionesTitle.setText("Instrucciones");
+        jl_InstruccionesTitle.setText("<html><b><font size =+1>Instrucciones</font></b></html>");
 
         jl_Instrucciones1.setText("1. Introduzca la cédula del estudiante a la izquierda, y presione");
 
@@ -132,25 +130,16 @@ public class FRM_Matriculas extends javax.swing.JFrame
         jl_Buscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         jl_Buscar1.setText("Buscar.");
 
-        jb_MostrarTodos.setText("Mostrar Todas las Matrículas");
-        jb_MostrarTodos.setActionCommand("Todos");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jb_MostrarTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_InstruccionesTitle)
+                            .addComponent(jl_InstruccionesTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jl_Instrucciones3)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jl_Instrucciones2)
@@ -163,13 +152,17 @@ public class FRM_Matriculas extends javax.swing.JFrame
                         .addGap(69, 69, 69))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(buscarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(1, 1, 1))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jl_InstruccionesTitle)
+                .addComponent(jl_InstruccionesTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_Instrucciones1)
@@ -183,9 +176,7 @@ public class FRM_Matriculas extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buscarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_MostrarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jb_Matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -199,7 +190,6 @@ public class FRM_Matriculas extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Vista.GUI_BuscarPanelMatriculas buscarPanel;
     private javax.swing.JButton jb_Matricular;
-    private javax.swing.JButton jb_MostrarTodos;
     private javax.swing.JLabel jl_Buscar;
     private javax.swing.JLabel jl_Buscar1;
     private javax.swing.JLabel jl_Instrucciones1;
