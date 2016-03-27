@@ -81,8 +81,11 @@ public class MetodosMatriculas
         System.out.println("Estudiante Matriculado: "+temporal.getInfo());
         arrayMatriculas.add(temporal);
     }
-    
-    //Muestra el Estudiante ingresado y sus cursos
+
+    /**
+     * Muestra el Estudiante ingresado y sus cursos
+     * @return the Cursos para el Estudiante
+     */
     public String mostrarCursEst()
     {
         Estudiante estudianteCiclo = estudianteGuardado;
