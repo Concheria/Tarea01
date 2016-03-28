@@ -48,6 +48,23 @@ public class FRM_MantenimientoCursos extends javax.swing.JFrame
      * (ej: Llenar campos vacíos)
      */
     
+        public void configInic()
+    {
+        GUI_InformacionCursos.configInic();
+        GUI_BotonesCursos.configInic();
+    }
+    
+    public void configBusc()
+    {
+        GUI_InformacionCursos.configEnab();
+    }
+    
+    public void configAgreg()
+    {
+        GUI_InformacionCursos.configEnab();
+        GUI_BotonesCursos.configAgreg();
+    }
+    
     /**
      * Devuelve el String escrito en todos los campos
      * @return the Cursos information String
@@ -77,7 +94,7 @@ public class FRM_MantenimientoCursos extends javax.swing.JFrame
     {
         GUI_InformacionCursos.clearFields();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

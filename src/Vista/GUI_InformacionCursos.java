@@ -12,17 +12,31 @@ import Controlador.Controlador_FRM_MantenimientoCursos;
  * @author daniel
  */
 public class GUI_InformacionCursos extends javax.swing.JPanel {
-
+    Controlador_FRM_MantenimientoCursos controlador;
     /**
      * Creates new form InformacionCursos
      */
     public GUI_InformacionCursos() {
         initComponents();
+        configInic();
+    }
+    
+        public void configInic()
+    {
+        jtf_Creditos.setEnabled(false);
+        jtf_Nombre.setEnabled(false);
+    }
+    
+    public void configEnab()
+    {       
+        jtf_Creditos.setEnabled(true);
+        jtf_Nombre.setEnabled(true);
     }
     
     public void agregarEventosGUI(Controlador_FRM_MantenimientoCursos controlador)
     {
         this.jb_Buscar.addActionListener(controlador);
+        this.controlador = controlador;
     }
     
     public String[] getInformacionEscrita()
@@ -92,6 +106,12 @@ public class GUI_InformacionCursos extends javax.swing.JPanel {
             }
         });
 
+        jtf_Siglas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtf_SiglasKeyPressed(evt);
+            }
+        });
+
         jb_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         jb_Buscar.setActionCommand("Buscar");
 
@@ -144,8 +164,15 @@ public class GUI_InformacionCursos extends javax.swing.JPanel {
     private void jtf_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_NombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_NombreActionPerformed
-
-
+    
+    private void jtf_SiglasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtf_SiglasKeyPressed
+        if(evt.getKeyCode() == 10)
+        {
+            controlador.buscar();
+        }
+    }//GEN-LAST:event_jtf_SiglasKeyPressed
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jb_Buscar;
     private javax.swing.JLabel jl_Creditos;

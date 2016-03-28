@@ -58,6 +58,24 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
         return this.GUI_InformacionEstudiante.getInformacionEscrita();
     }
     
+    public void configInic()
+    {
+        GUI_InformacionEstudiante.configInic();
+        GUI_BotonesEstudiantes.configInic();
+    }
+    
+    public void configBusc()
+    {
+        GUI_InformacionEstudiante.configEnab();
+        GUI_BotonesEstudiantes.configBusc();
+    }
+    
+    public void configAgreg()
+    {
+        GUI_InformacionEstudiante.configEnab();
+        GUI_BotonesEstudiantes.configAgreg();
+    }
+    
     /**
      * Devuelve el String en el campo de Cédula
      * @return the cedula

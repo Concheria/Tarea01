@@ -44,31 +44,7 @@ public class Controlador_FRM_MantenimientoEstudiantes implements ActionListener
     {
         if(e.getActionCommand().equals("Buscar"))
         {
-            /**
-             * Funcionamiento:
-             * 1. Obtiene la Cédula escrita
-             * 2. En el objeto de Métodos, busca si existe, si no existen manda un mensaje de error
-             * 3. Si existen, busca el objeto del ArraList con la cédula y devuelve la información de ese objeto
-             * 4. Llena los campos con la información en el Frame
-             */
-            System.out.println("Presionado Buscar");
-            if(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()) != null)
-            {
-                String cedulaEncontrada = metodos.getCedulaBuscada(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()));
-                System.out.println("Cedula Encontrada: "+cedulaEncontrada);
-                
-                String nombreEncontrado = metodos.getNombreBuscado(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()));
-                System.out.println("Nombre Encontrado: "+nombreEncontrado);
-                
-                String direccionEncontrada = metodos.getDireccionBuscada(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()));
-                System.out.println("Direccion Encontrada: "+direccionEncontrada);
-                
-                mantenimientoEstudiantes.fillFields(cedulaEncontrada, nombreEncontrado, direccionEncontrada);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún estudiante con la cédula");
-            }
+            buscar();
             System.out.println("Buscar");
         }
         if(e.getActionCommand().equals("Agregar"))
@@ -87,6 +63,7 @@ public class Controlador_FRM_MantenimientoEstudiantes implements ActionListener
             {
                 metodos.agregarEstudiante(mantenimientoEstudiantes.getInformacionEscrita());
                 mantenimientoEstudiantes.clearFields();
+                mantenimientoEstudiantes.configInic();
             }
             System.out.println("Agregar");
         }
@@ -106,11 +83,12 @@ public class Controlador_FRM_MantenimientoEstudiantes implements ActionListener
                 metodos.agregarEstudiante(mantenimientoEstudiantes.getInformacionEscrita());
                 JOptionPane.showMessageDialog(null, "El estudiante se ha modificado");
                 mantenimientoEstudiantes.clearFields();
+                mantenimientoEstudiantes.configInic();
             }
             else
             {
                 JOptionPane.showMessageDialog(null, "La cédula ingresada no está en uso");
-            }            
+            }
             System.out.println("Modificar");
         }
         if(e.getActionCommand().equals("Eliminar"))
@@ -121,16 +99,17 @@ public class Controlador_FRM_MantenimientoEstudiantes implements ActionListener
              * 2. Si ya está puesta, elimina al estudiante
              * 3. Limpia los campos
              */
-             if(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()) != null)
+            if(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()) != null)
             {
                 metodos.eliminarEstudiante(mantenimientoEstudiantes.getCedulaEscrita());
                 JOptionPane.showMessageDialog(null, "Se ha eliminado el estudiante");
                 mantenimientoEstudiantes.clearFields();
+                mantenimientoEstudiantes.configInic();
             }
             else
             {
                 JOptionPane.showMessageDialog(null, "La cédula ingresada no está en uso");
-            }            
+            }
             System.out.println("Eliminar");
         }
         if(e.getActionCommand().equals("Todos"))
@@ -138,6 +117,36 @@ public class Controlador_FRM_MantenimientoEstudiantes implements ActionListener
             //Muestra una lista con todos los estudiantes ingresados
             JOptionPane.showMessageDialog(null, metodos.getTodos());
             System.out.println("Todos");
+        }
+    }
+    
+    /**
+     * Funcionamiento:
+     * 1. Obtiene la Cédula escrita
+     * 2. En el objeto de Métodos, busca si existe, si no existen manda un mensaje de error
+     * 3. Si existen, busca el objeto del ArraList con la cédula y devuelve la información de ese objeto
+     * 4. Llena los campos con la información en el Frame
+     */
+    public void buscar()
+    {
+        if(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()) != null)
+        {
+            mantenimientoEstudiantes.configBusc();
+            String cedulaEncontrada = metodos.getCedulaBuscada(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()));
+            System.out.println("Cedula Encontrada: "+cedulaEncontrada);
+            
+            String nombreEncontrado = metodos.getNombreBuscado(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()));
+            System.out.println("Nombre Encontrado: "+nombreEncontrado);
+            
+            String direccionEncontrada = metodos.getDireccionBuscada(metodos.buscarCedula(mantenimientoEstudiantes.getCedulaEscrita()));
+            System.out.println("Direccion Encontrada: "+direccionEncontrada);
+            
+            mantenimientoEstudiantes.fillFields(cedulaEncontrada, nombreEncontrado, direccionEncontrada);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No se ha encontrado ningún estudiante con la cédula");
+            mantenimientoEstudiantes.configAgreg();
         }
     }
 }

@@ -20,6 +20,7 @@ public class GUI_BotonesCursos extends javax.swing.JPanel {
      */
     public GUI_BotonesCursos() {
         initComponents();
+        configInic();
     }
 
     public void agregarEventosGUI(Controlador_FRM_MantenimientoCursos controlador)
@@ -28,6 +29,16 @@ public class GUI_BotonesCursos extends javax.swing.JPanel {
         this.jb_AgregarCurso.addActionListener(controlador);
         this.jb_Buscar.addActionListener(controlador);
         this.jb_MostrarTodos.addActionListener(controlador);
+    }
+    
+    public void configInic()
+    {
+        jb_AgregarCurso.setEnabled(false);
+    }
+
+    public void configAgreg()
+    {
+        jb_AgregarCurso.setEnabled(true);
     }
     
     /**

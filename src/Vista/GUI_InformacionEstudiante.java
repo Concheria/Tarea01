@@ -16,12 +16,28 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
     /**
      * Creates new form GUI_InformacionEstudiante
      */
+    Controlador_FRM_MantenimientoEstudiantes controlador;
+    
     public GUI_InformacionEstudiante() {
         initComponents();
+        configInic();
     }
-
+    
+    public void configInic()
+    {
+        jtf_Direccion.setEnabled(false);
+        jtf_Nombre.setEnabled(false);
+    }
+    
+    public void configEnab()
+    {       
+        jtf_Direccion.setEnabled(true);
+        jtf_Nombre.setEnabled(true);
+    }
+    
     public void agregarEventosGUI(Controlador_FRM_MantenimientoEstudiantes controlador)
     {
+        this.controlador = controlador;
         this.jb_Buscar.addActionListener(controlador);
     }
 
@@ -81,6 +97,12 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
 
         jl_Direccion.setText("Dirección");
 
+        jtf_Cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtf_CedulaKeyPressed(evt);
+            }
+        });
+
         jb_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         jb_Buscar.setActionCommand("Buscar");
 
@@ -130,6 +152,12 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtf_CedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtf_CedulaKeyPressed
+        if(evt.getKeyCode() == 10)
+        {
+            controlador.buscar();
+        }
+    }//GEN-LAST:event_jtf_CedulaKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jb_Buscar;

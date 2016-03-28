@@ -19,6 +19,7 @@ public class GUI_BotonesEstudiantes extends javax.swing.JPanel {
      */
     public GUI_BotonesEstudiantes() {
         initComponents();
+        configInic();
     }
 
     public void agregarEventosGUI(Controlador_FRM_MantenimientoEstudiantes controlador)
@@ -29,6 +30,25 @@ public class GUI_BotonesEstudiantes extends javax.swing.JPanel {
         this.jb_Eliminar.addActionListener(controlador);
         this.jb_Modificar.addActionListener(controlador);
     }
+    
+    public void configInic()
+    {
+        jb_Agregar.setEnabled(false);
+        jb_Eliminar.setEnabled(false);
+        jb_Modificar.setEnabled(false);
+    }
+    
+    public void configBusc()
+    {
+        jb_Modificar.setEnabled(true);
+        jb_Eliminar.setEnabled(true);
+    }
+    
+    public void configAgreg()
+    {
+        jb_Agregar.setEnabled(true);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

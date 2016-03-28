@@ -44,30 +44,7 @@ public class Controlador_FRM_MantenimientoCursos implements ActionListener
     {
         if(e.getActionCommand().equals("Buscar"))
         {
-            /**
-             * Funcionamiento:
-             * 1. Obtiene las Siglas escritas
-             * 2. En el objeto de Métodos, busca si existen, si no existen manda un mensaje de error
-             * 3. Si existen, busca el objeto del ArraList con las siglas y devuelve la información de ese objeto
-             * 4. Llena los campos con la información en el Frame
-             */
-            if(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()) != null)
-            {
-                String siglasEncontradas = metodos.getSiglasBuscadas(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
-                System.out.println("Siglas Encontradas: "+siglasEncontradas);
-                
-                String nombreEncontrado = metodos.getNombreBuscado(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
-                System.out.println("Nombre Encontrado: "+nombreEncontrado);
-                
-                int creditosEncontrados = metodos.getCreditosBuscados(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
-                System.out.println("Cŕeditos Encontrados: "+creditosEncontrados);
-                
-                mantenimientoCursos.fillFields(siglasEncontradas, nombreEncontrado, creditosEncontrados);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún curso con las siglas");
-            }
+            buscar();
             System.out.println("Buscar");
         }
         if(e.getActionCommand().equals("Agregar"))
@@ -86,6 +63,7 @@ public class Controlador_FRM_MantenimientoCursos implements ActionListener
             {
                 metodos.agregarCurso(mantenimientoCursos.getInformacionEscrita());
                 mantenimientoCursos.clearFields();
+                mantenimientoCursos.configInic();
             }
             System.out.println("Agregar");
         }
@@ -95,5 +73,35 @@ public class Controlador_FRM_MantenimientoCursos implements ActionListener
             JOptionPane.showMessageDialog(null, metodos.getTodos());
             System.out.println("Todos");
         }
+    }
+    
+    /**
+     * Funcionamiento:
+     * 1. Obtiene las Siglas escritas
+     * 2. En el objeto de Métodos, busca si existen, si no existen manda un mensaje de error
+     * 3. Si existen, busca el objeto del ArraList con las siglas y devuelve la información de ese objeto
+     * 4. Llena los campos con la información en el Frame
+     */
+    public void buscar()
+    {
+            if(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()) != null)
+            {
+                mantenimientoCursos.configBusc();
+                String siglasEncontradas = metodos.getSiglasBuscadas(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
+                System.out.println("Siglas Encontradas: "+siglasEncontradas);
+                
+                String nombreEncontrado = metodos.getNombreBuscado(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
+                System.out.println("Nombre Encontrado: "+nombreEncontrado);
+                
+                int creditosEncontrados = metodos.getCreditosBuscados(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
+                System.out.println("Cŕeditos Encontrados: "+creditosEncontrados);
+                
+                mantenimientoCursos.fillFields(siglasEncontradas, nombreEncontrado, creditosEncontrados);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún curso con las siglas");
+                mantenimientoCursos.configAgreg();
+            }
     }
 }
