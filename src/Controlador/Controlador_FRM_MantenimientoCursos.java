@@ -84,24 +84,24 @@ public class Controlador_FRM_MantenimientoCursos implements ActionListener
      */
     public void buscar()
     {
-            if(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()) != null)
-            {
-                mantenimientoCursos.configBusc();
-                String siglasEncontradas = metodos.getSiglasBuscadas(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
-                System.out.println("Siglas Encontradas: "+siglasEncontradas);
-                
-                String nombreEncontrado = metodos.getNombreBuscado(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
-                System.out.println("Nombre Encontrado: "+nombreEncontrado);
-                
-                int creditosEncontrados = metodos.getCreditosBuscados(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
-                System.out.println("Cŕeditos Encontrados: "+creditosEncontrados);
-                
-                mantenimientoCursos.fillFields(siglasEncontradas, nombreEncontrado, creditosEncontrados);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún curso con las siglas");
-                mantenimientoCursos.configAgreg();
-            }
+        if(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()) != null)
+        {
+            mantenimientoCursos.configBusc();
+            String siglasEncontradas = metodos.getSiglasBuscadas(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
+            System.out.println("Siglas Encontradas: "+siglasEncontradas);
+            
+            String nombreEncontrado = metodos.getNombreBuscado(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
+            System.out.println("Nombre Encontrado: "+nombreEncontrado);
+            
+            int creditosEncontrados = metodos.getCreditosBuscados(metodos.buscarSiglas(mantenimientoCursos.getSiglasEscritas()));
+            System.out.println("Cŕeditos Encontrados: "+creditosEncontrados);
+            
+            mantenimientoCursos.fillFields(siglasEncontradas, nombreEncontrado, creditosEncontrados);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No se ha encontrado ningún curso con las siglas");
+            mantenimientoCursos.configAgreg();
+        }
     }
 }
